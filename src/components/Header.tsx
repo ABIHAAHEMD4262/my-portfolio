@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Lilita_One } from 'next/font/google';
+const lilita = Lilita_One({subsets:["latin"],weight:"400"});
 
 
 export default function Header() {
@@ -25,7 +27,7 @@ export default function Header() {
           <div className="flex-shrink-0 flex items-center">
   <Link
     href="/"
-    className=" text-3xl font-bold text-blue-600 dark:text-blue-400 "
+    className={`${lilita.className} text-3xl font-bold text-blue-600 dark:text-blue-400 `}
   >
     AbihaCodes
   </Link>

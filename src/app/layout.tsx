@@ -1,10 +1,10 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Lilita_One } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import type { Metadata } from 'next/dist/lib/metadata/types/metadata-interface';
 import './globals.css';
 
-const lilita = Lilita_One({subsets:["latin"],weight:"400"});
+const inter = Inter({ subsets: ['latin'] });
 
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lilita.className} flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
+      <body className={`${inter.className} flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
         <Header/>
         <div className="flex-grow">
           {children}
