@@ -12,7 +12,7 @@ export default function About() {
                 {/* Replace with your image */}
                 <div className="w-full h-full flex items-center justify-center text-gray-500">
                  <Image
-                             src="/images/pictures.jpg" // ✅ This should be your uploaded image
+                             src="/images/Profile_Pic.jpg" // ✅ This should be your uploaded image
                              alt="Abiha Ahmed"
                              width={240}
                              height={240}

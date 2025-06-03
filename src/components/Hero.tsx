@@ -13,7 +13,7 @@ export default function Home() {
         {/* Profile Image */}
         <div className="relative z-10 mb-10">
           <Image
-            src="/images/pictures.jpg" // ✅ This should be your uploaded image
+            src="/images/Profile_Pic.jpg" // ✅ This should be your uploaded image
             alt="Abiha Ahmed"
             width={300}
             height={300}
