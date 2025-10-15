@@ -35,9 +35,9 @@ export default function Header({ toggleDark }: { toggleDark: () => void }) {
         <nav className="hidden md:flex items-center gap-8 text-white font-medium">
           {[
             { href: "/", label: "Home" },
-            { href: "/About", label: "About" },
-            { href: "/Projects", label: "Projects" },
-            { href: "/Contact", label: "Contact" },
+            { href: "/about", label: "About" },
+            { href: "/projects", label: "Projects" },
+            { href: "/contact", label: "Contact" },
           ].map(({ href, label }) => (
             <Link
               key={href}
