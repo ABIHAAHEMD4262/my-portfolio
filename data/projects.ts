@@ -28,7 +28,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "MongoDB", "Express", "Node.js"],
     githubUrl: "https://github.com/ABIHAAHEMD4262/Blog-Website.git",
     liveUrl: "https://blog-website-indol-eight.vercel.app/",
-    imageUrl:"blog.PNG",
+    imageUrl:"blog_pic.PNG",
     featured: true
   },
   {
