@@ -1,38 +1,93 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const titles = ["AI Agents Developer", "Chatbot Developer", "Frontend Developer","Prompt Engineer"];
+  const [currentTitle, setCurrentTitle] = useState("");
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
+
+  // Typing effect logic
+  useEffect(() => {
+    if (index === titles.length) return;
+
+    if (subIndex === titles[index].length + 1 && !reverse) {
+      setTimeout(() => setReverse(true), 1000);
+      return;
+    }
+
+    if (subIndex === 0 && reverse) {
+      setReverse(false);
+      setIndex((prev) => (prev + 1) % titles.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (reverse ? -1 : 1));
+    }, Math.max(reverse ? 50 : 150, parseInt(`${Math.random() * 350}`)));
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, reverse]);
+
   return (
-    <main className="min-h-screen bg-[#0f172a] flex items-center justify-center px-4">
-      <section className="relative w-full max-w-5xl flex flex-col items-center justify-center text-white text-center py-20">
+    <main className="min-h-screen bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] flex items-center justify-center px-6 overflow-hidden relative">
+      {/* ✅ Animated Background Grid */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="w-full h-full bg-[radial-gradient(circle,_#00ff9d20_1px,_transparent_1px)] [background-size:30px_30px] animate-gridMove"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#020617]/80"></div>
+      </div>
 
-        {/* Background green blobs */}
-        <div className="absolute w-72 h-72 bg-[#72d60f] rounded-full blur-3xl opacity-40 z-0 -top-20 -left-20"></div>
-        <div className="absolute w-64 h-64 bg-[#a3ff1a] rounded-full blur-2xl opacity-30 z-0 top-20 right-20"></div>
-        <div className="absolute w-64 h-64 bg-[#72d60f] rounded-full blur-[100px] opacity-25 z-0"></div>
+      {/* ✅ Floating Neon Lines */}
+      <div className="absolute w-[1px] h-full bg-gradient-to-b from-transparent via-[#00f0ff60] to-transparent left-1/3 animate-lineMove"></div>
+      <div className="absolute w-[1px] h-full bg-gradient-to-b from-transparent via-[#00ff9d60] to-transparent right-1/3 animate-lineMoveSlow"></div>
 
+      {/* ✅ Hero Content */}
+      <section className="relative text-center text-white flex flex-col items-center z-10">
         {/* Profile Image */}
-        <div className="relative z-10 mb-10">
+        <div className="relative z-10 mb-8 animate-fade-in">
           <Image
-            src="/images/Profile_Pic.jpg" // ✅ This should be your uploaded image
+            src="/images/pt.jpg"
             alt="Abiha Ahmed"
-            width={300}
-            height={300}
-            className="rounded-2xl object-cover shadow-xl ring-4 ring-white"
+            width={230}
+            height={230}
+            className="rounded-full object-cover shadow-[0_0_40px_#00ff9d80]"
           />
         </div>
 
-        {/* Text Content */}
-        <h1 className= "text-4xl md:text-5xl font-bold mb-4 z-10">
-          Hi, I am Syeda Abiha Ahmed
+        {/* Title */}
+        <h1 className="text-5xl md:text-5xl font-extrabold z-10 mb-3 tracking-wide animate-slide-up">
+          Hi, I'm <span className="text-[#00ff9d]">Syeda Abiha Ahmed</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-8 z-10">
-          A Front-End Developer & UI/UX Engineer. I bring creativity and precision to every pixel and line of code.
+
+        {/* Typing animation */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#00f0ff] h-10 animate-typewriter">
+          {currentTitle || titles[index].substring(0, subIndex)}|
+        </h2>
+
+        {/* Description */}
+        <p className="text-gray-300 max-w-2xl mt-6 text-lg animate-fade-in-delay">
+          Building intelligent and visually striking digital experiences powered by AI and modern front-end tech.
         </p>
 
-        {/* Button */}
-        <button className="bg-[#a3ff1a] hover:bg-[#8bd00f] text-black font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300 z-10">
-          Contact Me
-        </button>
+        {/* Buttons */}
+        <div className="flex gap-5 mt-10 z-10 animate-slide-up">
+          <Link
+            href="/Syeda_Abiha_Ahmed_CV (2).pdf"
+            download
+            className="bg-[#00ff9d] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#00e58a] transition-all shadow-[0_0_20px_#00ff9d80]"
+          >
+            Download CV
+          </Link>
+          <Link href={"/Contact"}>
+          <button className="border border-[#00f0ff] px-8 py-3 rounded-full font-semibold hover:bg-[#00f0ff] hover:text-black transition-all shadow-[0_0_20px_#00f0ff60]">
+            Contact Me
+          </button>
+          </Link>
+          
+        </div>
       </section>
     </main>
   );

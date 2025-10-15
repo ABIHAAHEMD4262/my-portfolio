@@ -1,97 +1,110 @@
 "use client";
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Lilita_One } from 'next/font/google';
-const lilita = Lilita_One({subsets:["latin"],weight:"400"});
+import Link from "next/link";
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
+export default function Header({ toggleDark }: { toggleDark: () => void }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
-
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
-  ];
-
-  const isCurrentPage = (path: string) => pathname === path;
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex">
-          <div className="flex-shrink-0 flex items-center">
-  <Link
-    href="/"
-    className={`${lilita.className} text-3xl font-bold text-blue-600 dark:text-blue-400 `}
-  >
-    AbihaCodes
-  </Link>
-</div>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 mb-20 ${
+        scrolled
+          ? "backdrop-blur-lg bg-[#0f172a]/80 border-b border-[#00ff9d40] shadow-[0_0_15px_#00ff9d40]"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* ✅ Logo */}
+        <Link href={"/"}>
+          <h1 className="text-2xl font-extrabold text-[#00ff9d] tracking-wide hover:scale-105 transition-transform">
+            Abiha<span className="text-[#00f0ff]">Codes</span>
+          </h1>
+        </Link>
 
-          </div>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:ml-6 md:flex md:space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isCurrentPage(item.href)
-                    ? 'border-blue-500 text-gray-900 dark:text-white'
-                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-200'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800"
+        {/* ✅ Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8 text-white font-medium">
+          {[
+            { href: "/", label: "Home" },
+            { href: "/About", label: "About" },
+            { href: "/Projects", label: "Projects" },
+            { href: "/Contact", label: "Contact" },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className="relative group transition-all duration-300"
             >
-              <span className="sr-only">Open main menu</span>
-              {isMenuOpen ? (
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
+              <span className="group-hover:text-[#00ff9d] transition-all duration-300">
+                {label}
+              </span>
+              <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#00f0ff] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleDark}
+            className="text-xl text-[#00ff9d] hover:text-[#00f0ff] transition-all duration-300"
+            aria-label="Dark Mode Toggle"
+          >
+            <FaMoon className="dark:hidden" />
+            <FaSun className="hidden dark:inline" />
+          </button>
+        </nav>
+
+        {/* ✅ Mobile Menu Toggle */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-2xl text-[#00ff9d] md:hidden focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
-      
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="pt-2 pb-3 space-y-1">
-            {navigation.map((item) => (
+
+      {/* ✅ Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#0f172a]/95 backdrop-blur-xl border-t border-[#00ff9d40] shadow-[0_0_25px_#00ff9d40]">
+          <nav className="flex flex-col items-center gap-6 py-6 text-white font-medium">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/About", label: "About" },
+              { href: "/Projects", label: "Projects" },
+              { href: "/Contact", label: "Contact" },
+            ].map(({ href, label }) => (
               <Link
-                key={item.name}
-                href={item.href}
-                className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                  isCurrentPage(item.href)
-                    ? 'bg-blue-50 border-blue-500 text-blue-700 dark:bg-gray-800 dark:border-blue-500 dark:text-blue-400'
-                    : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:border-gray-600 dark:hover:text-white'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className="relative group transition-all duration-300 text-lg"
               >
-                {item.name}
+                <span className="group-hover:text-[#00ff9d] transition-all duration-300">
+                  {label}
+                </span>
+                <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#00f0ff] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-          </div>
+
+            {/* Theme Toggle (Mobile) */}
+            <button
+              onClick={toggleDark}
+              className="text-xl text-[#00ff9d] hover:text-[#00f0ff] transition-all duration-300"
+              aria-label="Dark Mode Toggle"
+            >
+              <FaMoon className="dark:hidden" />
+              <FaSun className="hidden dark:inline" />
+            </button>
+          </nav>
         </div>
       )}
     </header>

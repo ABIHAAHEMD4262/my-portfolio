@@ -1,30 +1,31 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { Inter } from 'next/font/google';
-import type { Metadata } from 'next/dist/lib/metadata/types/metadata-interface';
+'use client';
 import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { useState, useEffect } from 'react';
+import Chatbot from '@/components/Chatbot';
 
-const inter = Inter({ subsets: ['latin'] });
 
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [darkMode, setDarkMode] = useState(false);
 
-export const metadata: Metadata = {
-  title: 'AbihaCodes - Web Developer & UI/UX Designer',
-  description: 'Portfolio website showcasing web development and design work using Next.js, TypeScript, and Tailwind CSS',
-};
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [darkMode]);
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
-        <Header/>
-        <div className="flex-grow">
-          {children}
-        </div>
+      <body className="transition-colors duration-300 bg-white text-black dark:bg-gray-900 dark:text-white">
+        <Header toggleDark={() => setDarkMode((prev) => !prev)} />
+        <Chatbot/>
+        {children}
         <Footer />
+   
       </body>
     </html>
   );
