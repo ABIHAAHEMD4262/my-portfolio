@@ -55,7 +55,7 @@ export default function AboutPage() {
           transition={{ type: "spring", stiffness: 200 }}
         >
           <Link
-            href="/Contact"
+            href="/contact"
             className="inline-block bg-green-500 hover:bg-green-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300"
           >
             Let’s Connect
