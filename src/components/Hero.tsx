@@ -81,7 +81,7 @@ export default function Home() {
           >
             Download CV
           </Link>
-          <Link href={"/Contact"}>
+          <Link href={"/contact"}>
           <button className="border border-[#00f0ff] px-8 py-3 rounded-full font-semibold hover:bg-[#00f0ff] hover:text-black transition-all shadow-[0_0_20px_#00f0ff60]">
             Contact Me
           </button>
