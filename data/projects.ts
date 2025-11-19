@@ -23,12 +23,12 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Blog Website",
-    description: "A social platform allowing users to share content, follow others, and engage through comments and likes.",
-    technologies: ["Next.js", "TypeScript", "MongoDB", "Express", "Node.js"],
-    githubUrl: "https://github.com/ABIHAAHEMD4262/Blog-Website.git",
-    liveUrl: "https://blog-website-indol-eight.vercel.app/",
-    imageUrl:"blog_pic.PNG",
+    title: "MediCare+",
+    description: "Experience a new standard of medical care. We combine advanced technology with compassionate expertise to put your health first.",
+    technologies: ["Next.js", "TypeScript", "Tailwind Css", "Framer Motion", "Lucide React"],
+    githubUrl: "https://github.com/ABIHAAHEMD4262/Medical_Clinic",
+    liveUrl: "http://medical-clinic-ten.vercel.app/",
+    imageUrl:"medicare.PNG",
     featured: true
   },
   {
@@ -60,5 +60,15 @@ export const projects: Project[] = [
     liveUrl: "https://abihaahemd4262-unit-convertor-unit-convertor-jwkank.streamlit.app/",
     imageUrl:"unit.PNG",
     featured: false
-  }
+  },
+  {
+    id: 3,
+    title: "Blog Website",
+    description: "A social platform allowing users to share content, follow others, and engage through comments and likes.",
+    technologies: ["Next.js", "TypeScript", "MongoDB", "Express", "Node.js"],
+    githubUrl: "https://github.com/ABIHAAHEMD4262/Blog-Website.git",
+    liveUrl: "https://blog-website-indol-eight.vercel.app/",
+    imageUrl:"blog_pic.PNG",
+    featured: true
+  },
 ];
