@@ -43,6 +43,16 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    title: "Humanoid Robotics Book",
+    description: "Embodied Intelligence with ROS 2, Isaac Sim, and Vision-Language-Action Models.",
+    technologies: [ "Docusaurus","OpenAI Chatkit ","Google Gemini text-embedding-004 (768-dimensional)" , "Python", "Qdrant Cloud for semantic search"," FastAPI + Python 3.12, hosted on HuggingFace Spaces", "OpenAI GPT-4o-mini for answer generation"],
+    githubUrl: "https://github.com/ABIHAAHEMD4262/Humanoid-Robotics-Book",
+    liveUrl: "https://abihaahemd4262.github.io/Humanoid-Robotics-Book/",
+    imageUrl:"Book.PNG",
+    featured: true
+  },
+  {
+    id: 6,
     title: "Password Strength Meter",
     description: "A weather forecasting app that provides real-time weather data and forecasts for locations worldwide.",
     technologies: ["Streamlit", "Python"],
@@ -52,7 +62,7 @@ export const projects: Project[] = [
     featured: false
   },
   {
-    id: 6,
+    id: 7,
     title: "Unit convertor",
     description: "A simple and interactive unit conversion app built with Python and Streamlit.",
     technologies: ["Python", "Streamlit"],
@@ -62,7 +72,7 @@ export const projects: Project[] = [
     featured: false
   },
   {
-    id: 3,
+    id: 8,
     title: "Blog Website",
     description: "A social platform allowing users to share content, follow others, and engage through comments and likes.",
     technologies: ["Next.js", "TypeScript", "MongoDB", "Express", "Node.js"],
