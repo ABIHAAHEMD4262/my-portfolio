@@ -31,22 +31,25 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://huggingface.co/spaces/AbihaCodes/Portfolio-Chatbot/chat', {
+      // ✅ Use the Hugging Face Space API URL
+      const response = await fetch('https://abihacodes-portfolio-chatbot.hf.space/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: [...messages, userMessage] }),
       });
 
-      if (!response.ok) throw new Error('Network response was not ok');
+      if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
       const data = await response.json();
 
       setMessages((prev) => [...prev, { role: 'assistant', content: data.response }]);
     } catch (error) {
+      console.error('ChatBot fetch error:', error);
       setMessages((prev) => [
         ...prev,
         { role: 'assistant', content: '⚠️ Sorry, I could not get a response right now.' },
       ]);
     }
+
     setIsLoading(false);
   };
 
@@ -59,12 +62,7 @@ export default function ChatBot() {
         aria-label="Toggle Chatbot"
         whileTap={{ scale: 0.9 }}
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -93,20 +91,13 @@ export default function ChatBot() {
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-green-500 to-blue-600 text-white flex justify-between items-center">
             <h2 className="text-lg font-semibold tracking-wide">Abiha AI Assistant</h2>
-            <button
-              onClick={() => setIsChatOpen(false)}
-              className="hover:text-gray-100"
-              aria-label="Close chatbot"
-            >
+            <button onClick={() => setIsChatOpen(false)} className="hover:text-gray-100" aria-label="Close chatbot">
               ✖
             </button>
           </div>
 
           {/* Chat Messages */}
-          <div
-            ref={chatContainerRef}
-            className="flex-1 p-4 overflow-y-auto space-y-4 custom-scrollbar"
-          >
+          <div ref={chatContainerRef} className="flex-1 p-4 overflow-y-auto space-y-4 custom-scrollbar">
             {messages.length === 0 && (
               <p className="text-gray-400 text-center mt-10">
                 👋 Hi there! Ask me anything about Abiha or her projects.
@@ -118,9 +109,7 @@ export default function ChatBot() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className={`flex ${
-                  msg.role === 'user' ? 'justify-end' : 'justify-start'
-                }`}
+                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
                   className={`max-w-[75%] px-4 py-2 rounded-2xl text-sm shadow-md ${
@@ -136,9 +125,7 @@ export default function ChatBot() {
 
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-gray-700 text-gray-200 px-4 py-2 rounded-2xl animate-pulse">
-                  Typing...
-                </div>
+                <div className="bg-gray-700 text-gray-200 px-4 py-2 rounded-2xl animate-pulse">Typing...</div>
               </div>
             )}
           </div>
