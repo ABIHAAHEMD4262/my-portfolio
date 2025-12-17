@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -45,30 +44,31 @@ export default function Home() {
       <div className="absolute w-[1px] h-full bg-gradient-to-b from-transparent via-[#00ff9d60] to-transparent right-1/3 animate-lineMoveSlow"></div>
 
       {/* ✅ Hero Content */}
-      <section className="relative text-center text-white flex flex-col items-center z-10">
-        {/* Profile Image */}
-        <div className="relative z-10 mb-8 animate-fade-in">
-          <Image
-            src="/images/pt.jpg"
-            alt="Abiha Ahmed"
-            width={230}
-            height={230}
-            className="rounded-full object-cover shadow-[0_0_40px_#00ff9d80]"
-          />
+      <section className="relative text-center text-white flex flex-col items-center z-10 max-w-5xl">
+        {/* Welcome Tag */}
+        <div className="inline-block mb-6 animate-fade-in">
+          <span className="px-4 py-2 rounded-full bg-[#00ff9d]/10 border border-[#00ff9d]/30 text-[#00ff9d] text-sm font-medium backdrop-blur-sm">
+            Welcome to my portfolio
+          </span>
         </div>
 
         {/* Title */}
-        <h1 className="text-5xl md:text-5xl font-extrabold z-10 mb-3 tracking-wide animate-slide-up">
-          Hi, I'm <span className="text-[#00ff9d]">Syeda Abiha Ahmed</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold z-10 mb-6 tracking-tight animate-slide-up">
+          Hi, I'm{" "}
+          <span className="bg-gradient-to-r from-[#00ff9d] to-[#00f0ff] bg-clip-text text-transparent">
+            Syeda Abiha Ahmed
+          </span>
         </h1>
 
         {/* Typing animation */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-[#00f0ff] h-10 animate-typewriter">
-          {currentTitle || titles[index].substring(0, subIndex)}|
-        </h2>
+        <div className="h-16 flex items-center justify-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#00f0ff] animate-typewriter">
+            {currentTitle || titles[index].substring(0, subIndex)}|
+          </h2>
+        </div>
 
         {/* Description */}
-        <p className="text-gray-300 max-w-2xl mt-6 text-lg animate-fade-in-delay">
+        <p className="text-gray-300 max-w-3xl mt-8 text-lg md:text-xl leading-relaxed animate-fade-in-delay">
           Building intelligent and visually striking digital experiences powered by AI and modern front-end tech.
         </p>
 
