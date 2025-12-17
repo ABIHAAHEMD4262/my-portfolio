@@ -75,7 +75,7 @@ export default function Home() {
         {/* Buttons */}
         <div className="flex gap-5 mt-10 z-10 animate-slide-up">
           <Link
-            href="/Syeda_Abiha_Ahmed_CV (2).pdf"
+            href="/Resume.pdf"
             download
             className="bg-[#00ff9d] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#00e58a] transition-all shadow-[0_0_20px_#00ff9d80]"
           >
