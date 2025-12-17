@@ -1,8 +1,19 @@
 import { Project} from '../types';
 
 export const projects: Project[] = [
+  
   {
     id: 1,
+    title: "Humanoid Robotics Book",
+    description: "Embodied Intelligence with ROS 2, Isaac Sim, and Vision-Language-Action Models.",
+    technologies: [  "Speckit Plus","Docusaurus","OpenAI Chatkit ","Qdrant" , "Python", "Neon PostgressSQL"," FastAPI ", "OpenAI API"],
+    githubUrl: "https://github.com/ABIHAAHEMD4262/Humanoid-Robotics-Book",
+    liveUrl: "https://abihaahemd4262.github.io/Humanoid-Robotics-Book/",
+    imageUrl:"Book.PNG",
+    featured: true
+  },
+  {
+    id: 2,
     title: "E-Commerce Website",
     description: "A fully responsive e-commerce website built with Next.js and integrated with a headless CMS for product management.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Sanity.io"],
@@ -12,7 +23,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 2,
+    id:3,
     title: "Admin Dashboard",
     description: "An interactive dashboard to visualize e-commerce online E-commerce bussiness with real-time data fetching.",
     technologies: ["React", "Next.js", "Sanity", "Tailwind CSS", "Typescript"],
@@ -22,7 +33,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 3,
+    id: 4,
     title: "MediCare+",
     description: "Experience a new standard of medical care. We combine advanced technology with compassionate expertise to put your health first.",
     technologies: ["Next.js", "TypeScript", "Tailwind Css", "Framer Motion", "Lucide React"],
@@ -32,7 +43,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 4,
+    id: 5,
     title: "Figma Design",
     description: "This is the UI of website.Frontend is build by Figma Design",
     technologies: ["React", "Next.js", "TypeScript", "Tailwind.css", "Figma"],
@@ -40,16 +51,6 @@ export const projects: Project[] = [
     liveUrl: "https://assignment-6-five-delta.vercel.app/",
     imageUrl:"figma.PNG",
     featured: false
-  },
-  {
-    id: 5,
-    title: "Humanoid Robotics Book",
-    description: "Embodied Intelligence with ROS 2, Isaac Sim, and Vision-Language-Action Models.",
-    technologies: [ "Docusaurus","OpenAI Chatkit ","Google Gemini text-embedding-004 (768-dimensional)" , "Python", "Qdrant Cloud for semantic search"," FastAPI + Python 3.12, hosted on HuggingFace Spaces", "OpenAI GPT-4o-mini for answer generation"],
-    githubUrl: "https://github.com/ABIHAAHEMD4262/Humanoid-Robotics-Book",
-    liveUrl: "https://abihaahemd4262.github.io/Humanoid-Robotics-Book/",
-    imageUrl:"Book.PNG",
-    featured: true
   },
   {
     id: 6,
