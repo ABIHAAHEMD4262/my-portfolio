@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -25,27 +24,9 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <div className="flex flex-col md:flex-row gap-10 items-start">
-          {/* Profile Image */}
-          <motion.div
-            className="w-full md:w-1/3 flex justify-center md:justify-start"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-2 ring-green-400/40 hover:ring-green-400/70 transition-all duration-300">
-              <Image
-                src="/images/pt.jpg"
-                alt="Syeda Abiha Ahmed"
-                width={260}
-                height={260}
-                className="object-cover"
-              />
-            </div>
-          </motion.div>
-
+        <div className="flex flex-col gap-10 items-start">
           {/* About Info */}
-          <div className="w-full md:w-2/3 space-y-6">
+          <div className="w-full space-y-6">
             <div>
               <h2 className="text-3xl font-bold mb-1 text-green-400">
                 Syeda Abiha Ahmed

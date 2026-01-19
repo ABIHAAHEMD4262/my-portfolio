@@ -19,7 +19,7 @@ export const projects: Project[] = [
     technologies: ["Next.js 16", "TypeScript", "FastAPI", "Neon PostgreSQL", "OpenAI Agents SDK", "Docker", "Kubernetes", "MCP", "Tailwind CSS"],
     githubUrl: "https://github.com/ABIHAAHEMD4262/Todo-App",
     liveUrl: "https://taskley.vercel.app/",
-    imageUrl:"Todo.PNG",
+    imageUrl:"todo.png",
     featured: true
   },
   {
