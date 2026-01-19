@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
-  const titles = ["AI Agents Developer", "Chatbot Developer", "Frontend Developer","Prompt Engineer"];
+  const titles = ["Full-Stack AI/ML Engineer", "Cloud-Native Developer", "AI Automation Specialist", "Production Systems Builder"];
   const [currentTitle, setCurrentTitle] = useState("");
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -69,17 +69,17 @@ export default function Home() {
 
         {/* Description */}
         <p className="text-gray-300 max-w-3xl mt-8 text-lg md:text-xl leading-relaxed animate-fade-in-delay">
-          Building intelligent and visually striking digital experiences powered by AI and modern front-end tech.
+          Building production-grade AI systems with Next.js, FastAPI, and Kubernetes. Specialized in RAG chatbots, full-stack applications, and cloud-native architectures.
         </p>
 
         {/* Buttons */}
         <div className="flex gap-5 mt-10 z-10 animate-slide-up">
           <Link
             href="/Resume.pdf"
-            download
+            download="Syeda_Abiha_Ahmed_FullStack_AI_ML_Resume.pdf"
             className="bg-[#00ff9d] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#00e58a] transition-all shadow-[0_0_20px_#00ff9d80]"
           >
-            Download CV
+            Download Resume
           </Link>
           <Link href={"/contact"}>
           <button className="border border-[#00f0ff] px-8 py-3 rounded-full font-semibold hover:bg-[#00f0ff] hover:text-black transition-all shadow-[0_0_20px_#00f0ff60]">

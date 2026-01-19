@@ -10,13 +10,22 @@ import {
   SiGit,
   SiGithub,
   SiPython,
+  SiFastapi,
+  SiPostgresql,
+  SiDocker,
+  SiKubernetes,
+  SiVercel,
+  SiOpenai,
+  SiNodedotjs,
 } from "react-icons/si";
-import { FaMobileAlt, FaPalette } from "react-icons/fa";
+import { FaMobileAlt, FaPalette, FaDatabase, FaCloud } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { RiFlowChart } from "react-icons/ri"; // for n8n
 import { GiArtificialIntelligence } from "react-icons/gi"; // for Agents SDK
 import { JSX } from "react";
 import { BsRobot } from "react-icons/bs";
+import { TbBrandGoogleBigQuery } from "react-icons/tb"; // for Gemini
+import { SiGooglegemini } from "react-icons/si";
 
 
 export default function SkillsSection() {
@@ -34,10 +43,22 @@ export default function SkillsSection() {
     "Responsive Design": <FaMobileAlt className="text-[#a3ff1a]" />,
     "UI/UX": <FaPalette className="text-pink-400" />,
     Python: <SiPython className="text-[#f7cb3f]" />,
-    "OpenAI Agents SDK": <GiArtificialIntelligence className="text-[#a3ff1a]" />,
-    "N8n": <RiFlowChart className="text-[#ff6b00]" />,
-    "Prompt Engineering": <BsRobot className="text-[#a3ff1a]" />,
-
+    "FastAPI": <SiFastapi className="text-[#009688]" />,
+    "Node.js": <SiNodedotjs className="text-[#339933]" />,
+    "PostgreSQL": <SiPostgresql className="text-[#336791]" />,
+    "Neon": <FaDatabase className="text-[#a3ff1a]" />,
+    "SQLModel": <FaDatabase className="text-[#009688]" />,
+    "OpenAI Agents SDK": <SiOpenai className="text-[#a3ff1a]" />,
+    "RAG Systems": <GiArtificialIntelligence className="text-[#a3ff1a]" />,
+    "Qdrant": <FaDatabase className="text-purple-400" />,
+    "Google Gemini": <SiGooglegemini className="text-blue-400" />,
+    "MCP Servers": <BsRobot className="text-[#a3ff1a]" />,
+    
+    "Docker": <SiDocker className="text-[#2496ED]" />,
+    "Kubernetes": <SiKubernetes className="text-[#326CE5]" />,
+    "Vercel": <SiVercel className="text-white" />,
+    "HuggingFace": <FaCloud className="text-yellow-400" />,
+    "CI/CD": <GiArtificialIntelligence className="text-green-400" />,
   };
 
   // Skills data
@@ -46,19 +67,50 @@ export default function SkillsSection() {
       category: "Frontend Development",
       technologies: [
         "Next.js",
+        "React",
         "TypeScript",
+        "Tailwind CSS",
         "HTML5",
         "CSS3",
-        "Tailwind CSS",
       ],
     },
     {
-      category: "AI & Automation",
-      technologies: ["OpenAI Agents SDK", "N8n","Python","Prompt Engineering"],
+      category: "Backend Development",
+      technologies: [
+        "FastAPI",
+        "Python",
+        "Node.js",
+        "PostgreSQL",
+        "Neon",
+        "SQLModel",
+      ],
+    },
+    {
+      category: "AI/ML Integration",
+      technologies: [
+        "OpenAI Agents SDK",
+        "RAG Systems",
+        "Qdrant",
+        "Google Gemini",
+        "MCP Servers",
+        "OpenAI API",
+        "API Integration"
+      ],
+    },
+    {
+      category: "Cloud & DevOps",
+      technologies: [
+        "Docker",
+        "Kubernetes",
+        "Vercel",
+        "HuggingFace",
+        "CI/CD",
+        "Git",
+      ],
     },
     {
       category: "Design & Tools",
-      technologies: ["Figma", "Responsive Design", "UI/UX", "Git", "GitHub"],
+      technologies: ["Figma", "Responsive Design", "UI/UX", "GitHub"],
     },
   ];
 
@@ -89,7 +141,7 @@ export default function SkillsSection() {
         </motion.p>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {skills.map((group, i) => (
             <motion.div
               key={i}

@@ -28,17 +28,20 @@ export default function AboutPage() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed"
         >
-          I’m <span className="text-green-400 font-medium">Abiha Ahmed</span>, a passionate 
-          <span className="text-green-400 font-medium"> Frontend Developer </span> and 
-          <span className="text-green-400 font-medium"> UI Designer</span> with a keen eye for 
-          creating elegant and functional digital experiences. My expertise includes 
-          <span className="text-green-400 font-medium"> React, Next.js, TypeScript, Tailwind CSS,</span> and 
-          design tools like <span className="text-green-400 font-medium">Figma</span>.  
+          I'm <span className="text-green-400 font-medium">Syeda Abiha Ahmed</span>, a
+          <span className="text-green-400 font-medium"> Full-Stack AI/ML Engineer </span> from
+          <span className="text-green-400 font-medium">Karachi, Pakistan</span>. I build
+          production-grade AI systems that solve real business problems.
           <br /><br />
-          I also work with modern AI automation tools like 
-          <span className="text-green-400 font-medium"> OpenAI Agents SDK </span> and 
-          <span className="text-green-400 font-medium"> n8n </span>, bridging creativity with intelligence. 
-          My focus is on crafting visually engaging, responsive interfaces that bring ideas to life — blending design precision with technical excellence.
+          I specialize in{" "}
+          <span className="text-green-400 font-medium">AI Integration</span> (OpenAI Agents SDK, RAG systems, Qdrant vector databases),
+          <span className="text-green-400 font-medium"> Full-Stack Development</span> (Next.js 16, TypeScript, FastAPI, PostgreSQL), and{" "}
+          <span className="text-green-400 font-medium">Cloud & DevOps</span> (Kubernetes, Docker, HuggingFace, Vercel).
+          <br /><br />
+          With <span className="text-green-400 font-medium">4 completed hackathons</span> before turning 18,
+          I've deployed AI chatbots with NLP CRUD operations, educational platforms with RAG assistants,
+          and business automation systems to production. I transform complex problems into elegant,
+          scalable solutions using modern cloud-native architectures.
         </motion.p>
 
         {/* Divider line */}
