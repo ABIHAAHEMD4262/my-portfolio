@@ -21,8 +21,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="relative aspect-video overflow-hidden">
         <Image
           src={`/images/${project.imageUrl}`}
-          alt={`${project.title} preview`}
+          alt={`${project.title} — full-stack AI/ML project by Syeda Abiha Ahmed`}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-80"></div>
@@ -38,7 +39,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className="px-3 py-1 text-xs font-medium bg-green-500/10 text-green-300 border border-green-400/20 rounded-full"
+              className="px-3 py-1 text-xs font-medium bg-green-900/50 text-green-300 border border-green-400/40 rounded-full"
             >
               {tech}
             </span>
@@ -50,7 +51,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </p>
 
         {/* Buttons */}
-        <div className="flex space-x-4 mt-4">
+        <div className="flex flex-wrap gap-3 mt-4">
           {project.githubUrl && (
             <Link
               href={project.githubUrl}

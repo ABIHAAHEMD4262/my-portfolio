@@ -1,96 +1,126 @@
-'use client';
-import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { useState, useEffect } from 'react';
-import Chatbot from '@/components/Chatbot';
+import "./globals.css";
+import type { Metadata } from "next";
+import ClientLayout from "@/components/ClientLayout";
 
+export const metadata: Metadata = {
+  title: {
+    default: "Syeda Abiha Ahmed | AI/ML Engineer | Karachi Pakistan",
+    template: "%s | Syeda Abiha Ahmed",
+  },
+  description:
+    "Full-Stack AI/ML Engineer specializing in RAG chatbots, Next.js, FastAPI, and Kubernetes. Based in Karachi, Pakistan. Available for freelance projects.",
+  keywords: [
+    "AI engineer Pakistan",
+    "RAG chatbot developer",
+    "Next.js developer Karachi",
+    "FastAPI developer",
+    "Full stack AI developer",
+    "freelance AI developer Pakistan",
+    "Kubernetes developer",
+    "machine learning engineer Pakistan",
+    "Syeda Abiha Ahmed",
+  ],
+  authors: [{ name: "Syeda Abiha Ahmed", url: "https://abihacode.vercel.app" }],
+  creator: "Syeda Abiha Ahmed",
+  metadataBase: new URL("https://abihacode.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Syeda Abiha Ahmed | AI/ML Engineer | Karachi Pakistan",
+    description:
+      "Full-Stack AI/ML Engineer specializing in RAG chatbots, Next.js, FastAPI, and Kubernetes. Based in Karachi, Pakistan. Available for freelance projects.",
+    url: "https://abihacode.vercel.app",
+    siteName: "Syeda Abiha Ahmed Portfolio",
+    images: [
+      {
+        url: "/images/pt.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Syeda Abiha Ahmed – Full-Stack AI/ML Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Syeda Abiha Ahmed | AI/ML Engineer | Karachi Pakistan",
+    description:
+      "Full-Stack AI/ML Engineer specializing in RAG chatbots, Next.js, FastAPI, and Kubernetes. Based in Karachi, Pakistan. Available for freelance projects.",
+    images: ["/images/pt.jpg"],
+    creator: "@abihaahmed",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  themeColor: "#00ff9d",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://abihacode.vercel.app/#person",
+      name: "Syeda Abiha Ahmed",
+      jobTitle: "Full-Stack AI/ML Engineer",
+      description:
+        "Full-Stack AI/ML Engineer specializing in RAG chatbots, Next.js, FastAPI, and Kubernetes. Based in Karachi, Pakistan.",
+      url: "https://abihacode.vercel.app",
+      image: "https://abihacode.vercel.app/images/pt.jpg",
+      email: "abihaahmed413@gmail.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Karachi",
+        addressCountry: "Pakistan",
+      },
+      sameAs: [
+        "https://github.com/ABIHAAHEMD4262",
+        "https://www.linkedin.com/in/syeda-abiha-ahmed-9437152b5?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      ],
+      knowsAbout: ["RAG Systems", "Next.js", "FastAPI", "Kubernetes", "OpenAI", "Python"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://abihacode.vercel.app/#website",
+      name: "Syeda Abiha Ahmed Portfolio",
+      url: "https://abihacode.vercel.app",
+      author: { "@id": "https://abihacode.vercel.app/#person" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://abihacode.vercel.app/projects?q={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  }, [darkMode]);
-
   return (
     <html lang="en">
       <head>
-        <title>Syeda Abiha Ahmed | Full-Stack AI/ML Engineer | Karachi, Pakistan</title>
-        <meta name="description" content="Full-Stack AI/ML Engineer specializing in production-grade AI systems, Kubernetes deployments, and RAG chatbots. 4 hackathons completed, 15,000+ lines of code. Building Next.js, FastAPI, and cloud-native applications." />
-        <meta name="keywords" content="AI Engineer, Full-Stack Developer, Machine Learning, Kubernetes, RAG Chatbots, FastAPI, Next.js, TypeScript, Python, Karachi Developer, AI Automation, Cloud-Native, Vector Databases, Qdrant" />
-        <meta name="author" content="Syeda Abiha Ahmed" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="Syeda Abiha Ahmed - Full-Stack AI/ML Engineer" />
-        <meta property="og:description" content="Building production-grade AI systems with Next.js, FastAPI, and Kubernetes. Specialized in RAG chatbots and cloud-native architectures." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://abihacode.vercel.app" />
-        <meta property="og:image" content="https://abihacode.vercel.app/images/pt.jpg" />
-        <meta property="og:site_name" content="Syeda Abiha Ahmed Portfolio" />
-        <meta property="og:locale" content="en_US" />
-
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Syeda Abiha Ahmed - Full-Stack AI/ML Engineer" />
-        <meta name="twitter:description" content="Building production-grade AI systems with Next.js, FastAPI, and Kubernetes. 4 hackathons, 15K+ lines of code." />
-        <meta name="twitter:image" content="https://abihacode.vercel.app/images/pt.jpg" />
-        <meta name="twitter:creator" content="@abihaahmed" />
-
-        {/* Additional SEO */}
-        <meta name="theme-color" content="#00ff9d" />
-        <link rel="canonical" href="https://abihacode.vercel.app" />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Structured Data - JSON-LD */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Syeda Abiha Ahmed",
-            "jobTitle": "Full-Stack AI/ML Engineer",
-            "description": "Full-Stack AI/ML Engineer specializing in production-grade AI systems, Kubernetes, and RAG chatbots",
-            "url": "https://abihacode.vercel.app",
-            "image": "https://abihacode.vercel.app/images/pt.jpg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Karachi",
-              "addressCountry": "Pakistan"
-            },
-            "email": "abihaahmed413@gmail.com",
-            "sameAs": [
-              "https://github.com/ABIHAAHEMD4262",
-              "https://www.linkedin.com/in/syeda-abiha-ahmed-9437152b5/"
-            ],
-            "knowsAbout": [
-              "Artificial Intelligence",
-              "Machine Learning",
-              "Full-Stack Development",
-              "Kubernetes",
-              "RAG Systems",
-              "Next.js",
-              "FastAPI",
-              "Python",
-              "TypeScript"
-            ]
-          })}
-        </script>
+        <link rel="preconnect" href="https://abihacodes-portfolio-chatbot.hf.space" />
+        <link rel="dns-prefetch" href="https://abihacodes-portfolio-chatbot.hf.space" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
-      <body className="transition-colors duration-300 bg-white text-black dark:bg-gray-900 dark:text-white">
-        <Header toggleDark={() => setDarkMode((prev) => !prev)} />
-        <Chatbot/>
-        {children}
-        <Footer />
-
-      </body>
+      <ClientLayout>{children}</ClientLayout>
     </html>
   );
 }
