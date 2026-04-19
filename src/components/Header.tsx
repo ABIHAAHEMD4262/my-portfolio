@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
 export default function Header({ toggleDark }: { toggleDark: () => void }) {
@@ -51,6 +51,26 @@ export default function Header({ toggleDark }: { toggleDark: () => void }) {
             </Link>
           ))}
 
+          {/* Social Icons */}
+          <a
+            href="https://github.com/ABIHAAHEMD4262"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-[#00ff9d] hover:text-[#00f0ff] hover:opacity-80 transition-all duration-300"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/syeda-abiha-ahmed-9437152b5?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-[#00ff9d] hover:text-[#00f0ff] hover:opacity-80 transition-all duration-300"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+
           {/* Theme Toggle */}
           <button
             onClick={toggleDark}
@@ -94,6 +114,28 @@ export default function Header({ toggleDark }: { toggleDark: () => void }) {
                 <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#00f0ff] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
+
+            {/* Social Icons (Mobile) */}
+            <div className="flex items-center gap-6">
+              <a
+                href="https://github.com/ABIHAAHEMD4262"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl text-[#00ff9d] hover:text-[#00f0ff] hover:opacity-80 transition-all duration-300"
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/abiha-ahmed-9437152b5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl text-[#00ff9d] hover:text-[#00f0ff] hover:opacity-80 transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
 
             {/* Theme Toggle (Mobile) */}
             <button

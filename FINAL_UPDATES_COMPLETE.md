@@ -35,7 +35,7 @@
 **AFTER:**
 ```tsx
 <h3>Full-Stack AI/ML Engineer</h3>
-<p>📍 Karachi, Pakistan | 🎂 Turning 18 on Feb 21, 2026</p>
+<p>📍 Karachi, Pakistan | 🎂 18 years old | Karachi, Pakistan</p>
 ```
 
 #### **Rewritten Description**
@@ -43,7 +43,7 @@
 > "I'm a passionate developer focused on crafting modern, responsive, and intelligent web experiences..."
 
 **AFTER:**
-> "I'm a Full-Stack AI/ML Engineer who builds production-grade systems that solve real business problems. With 4 completed hackathons before turning 18, I specialize in deploying AI applications on Kubernetes, building RAG chatbots with vector databases..."
+> "I'm a Full-Stack AI/ML Engineer who builds production-grade systems that solve real business problems. With 4 completed hackathons by age 18, I specialize in deploying AI applications on Kubernetes, building RAG chatbots with vector databases..."
 
 #### **Added Stats Section** ⭐ NEW!
 ```tsx

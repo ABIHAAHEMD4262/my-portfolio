@@ -38,7 +38,7 @@ export default function AboutPage() {
           <span className="text-green-400 font-medium"> Full-Stack Development</span> (Next.js 16, TypeScript, FastAPI, PostgreSQL), and{" "}
           <span className="text-green-400 font-medium">Cloud & DevOps</span> (Kubernetes, Docker, HuggingFace, Vercel).
           <br /><br />
-          With <span className="text-green-400 font-medium">4 completed hackathons</span> before turning 18,
+          With <span className="text-green-400 font-medium">4 completed hackathons</span> by age 18,
           I've deployed AI chatbots with NLP CRUD operations, educational platforms with RAG assistants,
           and business automation systems to production. I transform complex problems into elegant,
           scalable solutions using modern cloud-native architectures.

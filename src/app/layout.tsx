@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: {
     default: "Syeda Abiha Ahmed | AI/ML Engineer | Karachi Pakistan",
     template: "%s | Syeda Abiha Ahmed",
+    
   },
   description:
     "Full-Stack AI/ML Engineer specializing in RAG chatbots, Next.js, FastAPI, and Kubernetes. Based in Karachi, Pakistan. Available for freelance projects.",
@@ -65,6 +66,9 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   themeColor: "#00ff9d",
+  verification: {
+    google: "flcuNmA7f8ZtHbiu2bu9JDM7fgE5rERv1NnXpOlDZTQ",
+  },
 };
 
 const jsonLd = {

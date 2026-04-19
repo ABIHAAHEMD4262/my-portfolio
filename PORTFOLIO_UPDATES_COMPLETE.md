@@ -47,7 +47,7 @@
 >
 > I specialize in AI Integration (OpenAI Agents SDK, RAG systems, Qdrant vector databases), Full-Stack Development (Next.js 16, TypeScript, FastAPI, PostgreSQL), and Cloud & DevOps (Kubernetes, Docker, HuggingFace, Vercel).
 >
-> With 4 completed hackathons before turning 18, I've deployed AI chatbots with NLP CRUD operations, educational platforms with RAG assistants, and business automation systems to production."
+> With 4 completed hackathons by age 18, I've deployed AI chatbots with NLP CRUD operations, educational platforms with RAG assistants, and business automation systems to production."
 
 **Impact:** About section now showcases real expertise + impressive achievements
 
@@ -192,7 +192,7 @@ Test these pages to confirm updates:
 ### **About Page**
 - [ ] Title: "Full-Stack AI/ML Engineer"
 - [ ] Location: "Karachi, Pakistan"
-- [ ] Mentions: 4 hackathons before turning 18
+- [ ] Mentions: 4 hackathons by age 18
 - [ ] Technologies: OpenAI, RAG, Qdrant, FastAPI, Kubernetes
 
 ### **Projects Page**

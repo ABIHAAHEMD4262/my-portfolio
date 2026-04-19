@@ -113,7 +113,7 @@ Full-Stack AI/ML Engineer specializing in production-grade AI systems, cloud-nat
 ## HACKATHONS & ACHIEVEMENTS
 
 ### Hackathon Participation
-- **4 Hackathons Completed** before turning 18
+- **4 Hackathons Completed** by age 18
 - **E-Commerce Website** - Full-stack platform with Sanity CMS
 - **Humanoid Robotics Book** - AI-powered educational platform
 - **Taskley** - Cloud-native task management with Kubernetes

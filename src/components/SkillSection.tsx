@@ -135,7 +135,7 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-gray-400 max-w-2xl mx-auto mb-16"
+          className="text-gray-300 max-w-2xl mx-auto mb-16"
         >
           The technologies and tools I use to build powerful, modern, and intelligent application.
         </motion.p>
@@ -153,16 +153,19 @@ export default function SkillsSection() {
               <h3 className="text-2xl font-semibold mb-6 text-[#a3ff1a]">
                 {group.category}
               </h3>
-              <ul className="space-y-4">
+              <div className="flex flex-wrap gap-2">
                 {group.technologies.map((tech, index) => (
-                  <li key={index} className="flex items-center space-x-3">
-                    <span className="text-2xl">{iconMap[tech]}</span>
-                    <span className="text-gray-300 hover:text-white transition">
-                      {tech}
-                    </span>
-                  </li>
+                  <span
+                    key={index}
+                    className="flex items-center gap-2 bg-gray-900 border border-gray-700 hover:border-[#a3ff1a]/50 hover:bg-gray-800 text-gray-200 hover:text-white text-sm font-medium px-3 py-1.5 rounded-full transition-all duration-200"
+                  >
+                    {iconMap[tech] && (
+                      <span className="text-base leading-none">{iconMap[tech]}</span>
+                    )}
+                    {tech}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>

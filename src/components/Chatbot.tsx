@@ -86,7 +86,7 @@ export default function ChatBot() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-24 right-6 w-80 sm:w-96 h-[30rem] rounded-2xl overflow-hidden shadow-2xl border border-gray-700 bg-gradient-to-b from-gray-900/95 to-gray-800/95 backdrop-blur-xl flex flex-col z-40"
+          className="fixed bottom-24 right-3 sm:right-6 w-[calc(100vw-1.5rem)] sm:w-96 h-[30rem] rounded-2xl overflow-hidden shadow-2xl border border-gray-700 bg-gradient-to-b from-gray-900/95 to-gray-800/95 backdrop-blur-xl flex flex-col z-40"
         >
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-green-500 to-blue-600 text-white flex justify-between items-center">
@@ -136,7 +136,7 @@ export default function ChatBot() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+              onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
               className="flex-1 p-2 bg-gray-900 border border-gray-600 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder="Ask me something..."
             />

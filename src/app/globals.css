@@ -42,7 +42,7 @@ body {
 .animate-fade-in { animation: fade-in 1.2s ease-out; }
 .animate-fade-in-delay { animation: fade-in-delay 1.5s ease-out; }
 .animate-slide-up { animation: slide-up 1s ease-out; }
-.animate-pulse { animation: pulse 4s infinite; }
+.animate-glow-pulse { animation: pulse 4s infinite; }
 .animate-gridMove { animation: gridMove 8s linear infinite; }
 .animate-lineMove { animation: lineMove 6s linear infinite; }
 .animate-lineMoveSlow { animation: lineMoveSlow 10s linear infinite; }

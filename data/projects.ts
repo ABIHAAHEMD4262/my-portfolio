@@ -55,7 +55,7 @@ export const projects: Project[] = [
   {
     id: 6,
     title: "Figma Design",
-    description: "This is the UI of website.Frontend is build by Figma Design",
+    description: "Pixel-perfect frontend implementation of a Figma design, converting a professional UI mockup into a fully responsive Next.js and TypeScript web page.",
     technologies: ["React", "Next.js", "TypeScript", "Tailwind.css", "Figma"],
     githubUrl: "https://github.com/ABIHAAHEMD4262/Assignment-6.git",
     liveUrl: "https://assignment-6-five-delta.vercel.app/",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
   {
     id: 7,
     title: "Password Strength Meter",
-    description: "A weather forecasting app that provides real-time weather data and forecasts for locations worldwide.",
+    description: "A real-time password strength analyzer built with Python and Streamlit. Evaluates passwords against length, complexity, and common-pattern rules with instant visual feedback.",
     technologies: ["Streamlit", "Python"],
     githubUrl: "https://github.com/ABIHAAHEMD4262/Password_Strength_Meter",
     liveUrl: "https://password-strength-meter-xvrupnehryx7mrbyrmswmy.streamlit.app/",

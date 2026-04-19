@@ -45,6 +45,15 @@ export default function Home() {
 
       {/* ✅ Hero Content */}
       <section className="relative text-center text-white flex flex-col items-center z-10 max-w-5xl">
+        {/* Available for Hire Badge */}
+        <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-[#00ff9d]/10 border border-[#00ff9d]/30 text-[#00ff9d] text-sm font-medium backdrop-blur-sm animate-fade-in">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff9d] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00ff9d]"></span>
+          </span>
+          ✅ Available for Hire
+        </div>
+
         {/* Welcome Tag */}
         <div className="inline-block mb-6 animate-fade-in">
           <span className="px-4 py-2 rounded-full bg-[#00ff9d]/10 border border-[#00ff9d]/30 text-[#00ff9d] text-sm font-medium backdrop-blur-sm">
@@ -63,7 +72,7 @@ export default function Home() {
         {/* Typing animation */}
         <div className="h-16 flex items-center justify-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#00f0ff] animate-typewriter">
-            {currentTitle || titles[index].substring(0, subIndex)}|
+            {currentTitle || titles[index].substring(0, subIndex)}
           </h2>
         </div>
 
@@ -73,7 +82,7 @@ export default function Home() {
         </p>
 
         {/* Buttons */}
-        <div className="flex gap-5 mt-10 z-10 animate-slide-up">
+        <div className="flex flex-wrap justify-center gap-4 mt-10 z-10 animate-slide-up">
           <Link
             href="/Resume.pdf"
             download="Syeda_Abiha_Ahmed_FullStack_AI_ML_Resume.pdf"

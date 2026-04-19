@@ -15,7 +15,7 @@ export default function Footer() {
         
         {/* Left Section */}
         <motion.p 
-          className="text-gray-400 text-sm"
+          className="text-gray-300 text-sm"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

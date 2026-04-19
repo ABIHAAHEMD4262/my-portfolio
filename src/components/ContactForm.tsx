@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -41,7 +41,7 @@ export default function ContactForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-5xl md:text-6xl font-bold text-green-400">Let's Work Together</h1>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-green-400">Let's Work Together</h1>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
           Have a project in mind or want to discuss AI automation for your business?
           I'm available for freelance projects starting February 2026.
@@ -115,22 +115,22 @@ export default function ContactForm() {
 
             <div className="space-y-4">
               <div>
-                <h4 className="text-sm text-gray-400 mb-1">Location</h4>
+                <h4 className="text-sm text-gray-300 mb-1">Location</h4>
                 <p className="text-gray-200">📍 Karachi, Pakistan</p>
               </div>
 
               <div>
-                <h4 className="text-sm text-gray-400 mb-1">Availability</h4>
+                <h4 className="text-sm text-gray-300 mb-1">Availability</h4>
                 <p className="text-gray-200">🟢 Available from Feb 21, 2026</p>
               </div>
 
               <div>
-                <h4 className="text-sm text-gray-400 mb-1">Response Time</h4>
+                <h4 className="text-sm text-gray-300 mb-1">Response Time</h4>
                 <p className="text-gray-200">⚡ Usually within 24 hours</p>
               </div>
 
               <div>
-                <h4 className="text-sm text-gray-400 mb-1">Services</h4>
+                <h4 className="text-sm text-gray-300 mb-1">Services</h4>
                 <ul className="text-gray-200 space-y-1 text-sm">
                   <li>• AI-Powered Applications</li>
                   <li>• Full-Stack Development</li>
@@ -144,7 +144,7 @@ export default function ContactForm() {
           {/* Social Links */}
           <div className="bg-gradient-to-br from-gray-900 via-gray-950 to-black border border-green-500/20 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-green-400 mb-6">Connect With Me</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
